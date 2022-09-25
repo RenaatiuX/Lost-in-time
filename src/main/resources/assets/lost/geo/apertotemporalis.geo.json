@@ -1,0 +1,78 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "Apertotemporalis",
+					"pivot": [0, 6, 6]
+				},
+				{
+					"name": "Torso",
+					"parent": "Apertotemporalis",
+					"pivot": [0, 6, 6],
+					"cubes": [
+						{"origin": [-4.5, 0, -5], "size": [9, 7, 12], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "Neck",
+					"parent": "Torso",
+					"pivot": [0, 4, -5],
+					"cubes": [
+						{"origin": [-1.5, 1, -12], "size": [3, 3, 8], "uv": [16, 20]}
+					]
+				},
+				{
+					"name": "Head",
+					"parent": "Neck",
+					"pivot": [0, 4, -12],
+					"cubes": [
+						{"origin": [-3.5, 0, -17], "size": [7, 4, 5], "uv": [0, 19]},
+						{"origin": [-1.5, 2, -19], "size": [3, 2, 2], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "LeftArm",
+					"parent": "Torso",
+					"pivot": [4.5, 1, -5],
+					"cubes": [
+						{"origin": [4.5, 0, -7], "size": [6, 1, 6], "uv": [30, 19]}
+					]
+				},
+				{
+					"name": "RightArm",
+					"parent": "Torso",
+					"pivot": [-4.5, 1, -5],
+					"cubes": [
+						{"origin": [-10.5, 0, -7], "size": [6, 1, 6], "uv": [30, 19], "mirror": true}
+					]
+				},
+				{
+					"name": "LeftLeg",
+					"parent": "Apertotemporalis",
+					"pivot": [4.5, 1, 3],
+					"cubes": [
+						{"origin": [4.5, 0, 3], "size": [4, 1, 4], "uv": [30, 7]}
+					]
+				},
+				{
+					"name": "RightLeg",
+					"parent": "Apertotemporalis",
+					"pivot": [-4.5, 1, 3],
+					"cubes": [
+						{"origin": [-8.5, 0, 3], "size": [4, 1, 4], "uv": [30, 7], "mirror": true}
+					]
+				}
+			]
+		}
+	]
+}
