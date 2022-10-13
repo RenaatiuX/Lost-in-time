@@ -3,6 +3,7 @@ package com.rena.lost;
 
 import com.rena.lost.client.model.LITModels;
 import com.rena.lost.common.entity.aquatic.ApertotemporalisEntity;
+import com.rena.lost.core.BlockInit;
 import com.rena.lost.core.EntityInit;
 import com.rena.lost.core.ItemInit;
 import net.minecraftforge.common.MinecraftForge;
@@ -23,7 +24,7 @@ import java.util.stream.Collectors;
 public class LostInTime
 {
     // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
 
     public static final String MOD_ID = "lost";
     public static final String ARMOR_DIR = MOD_ID + ":textures/armor/";
@@ -35,6 +36,7 @@ public class LostInTime
         GeckoLib.initialize();
 
         ItemInit.ITEMS.register(bus);
+        BlockInit.BLOCK.register(bus);
         EntityInit.ENTITY_TYPES.register(bus);
 
         bus.addListener(this::setup);

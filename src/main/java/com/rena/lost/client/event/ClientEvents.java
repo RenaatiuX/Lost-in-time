@@ -4,8 +4,10 @@ import com.rena.lost.LostInTime;
 import com.rena.lost.client.render.SpearRenderer;
 import com.rena.lost.client.render.entities.ApertotemporalisRender;
 import com.rena.lost.common.item.armor.ConcavenatorMaskItem;
+import com.rena.lost.core.BlockInit;
 import com.rena.lost.core.EntityInit;
 import com.rena.lost.core.ItemInit;
+import net.minecraft.client.renderer.BlockRendererDispatcher;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.ItemModelsProperties;
@@ -24,6 +26,7 @@ public class ClientEvents {
         armorModel();
         modelProperties();
         entityRenderer();
+        registerBlockRenderer();
     }
 
     private static void armorModel(){
@@ -32,6 +35,16 @@ public class ClientEvents {
     private static void modelProperties(){
         ItemModelsProperties.registerProperty(ItemInit.WOODEN_SPEAR.get(), new ResourceLocation("throwing"), (item, world, entity) ->
                 (entity != null && entity.isHandActive() && entity.getActiveItemStack() == item) ? 1.0F : 0.0F);
+        ItemModelsProperties.registerProperty(ItemInit.STONE_SPEAR.get(), new ResourceLocation("throwing"), (item, world, entity) ->
+                (entity != null && entity.isHandActive() && entity.getActiveItemStack() == item) ? 1.0F : 0.0F);
+        ItemModelsProperties.registerProperty(ItemInit.GOLD_SPEAR.get(), new ResourceLocation("throwing"), (item, world, entity) ->
+                (entity != null && entity.isHandActive() && entity.getActiveItemStack() == item) ? 1.0F : 0.0F);
+        ItemModelsProperties.registerProperty(ItemInit.IRON_SPEAR.get(), new ResourceLocation("throwing"), (item, world, entity) ->
+                (entity != null && entity.isHandActive() && entity.getActiveItemStack() == item) ? 1.0F : 0.0F);
+        ItemModelsProperties.registerProperty(ItemInit.DIAMOND_SPEAR.get(), new ResourceLocation("throwing"), (item, world, entity) ->
+                (entity != null && entity.isHandActive() && entity.getActiveItemStack() == item) ? 1.0F : 0.0F);
+        ItemModelsProperties.registerProperty(ItemInit.NETHERITE_SPEAR.get(), new ResourceLocation("throwing"), (item, world, entity) ->
+                (entity != null && entity.isHandActive() && entity.getActiveItemStack() == item) ? 1.0F : 0.0F);
     }
 
     private static void entityRenderer() {
@@ -39,7 +52,10 @@ public class ClientEvents {
         RenderingRegistry.registerEntityRenderingHandler(EntityInit.APERTOTEMPORALIS_ENTITY.get(), ApertotemporalisRender::new);
     }
 
-    private static void registerEntityRenderer(){
+    private static void registerBlockRenderer(){
+
+        RenderTypeLookup.setRenderLayer(BlockInit.WEICHSELIA_PLANT.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.ARCHAEFRUCTUS.get(), RenderType.getCutout());
 
     }
 }

@@ -31,7 +31,8 @@ import java.util.Random;
 
 public abstract class BaseEggBlock extends Block implements IIncubatorEgg {
 
-    private static final VoxelShape SHAPES = makeShape();
+    private static final VoxelShape ONE_EGG_SHAPE = Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 12.0D, 7.0D, 12.0D);
+    private static final VoxelShape MULTI_EGG_SHAPE = Block.makeCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 7.0D, 15.0D);
 
     public static final IntegerProperty HATCH = BlockStateProperties.HATCH_0_2;
     public static final IntegerProperty EGGS = BlockStateProperties.EGGS_1_4;
@@ -135,7 +136,7 @@ public abstract class BaseEggBlock extends Block implements IIncubatorEgg {
 
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-        return super.getShape(state, worldIn, pos, context);
+        return state.get(EGGS) > 1 ? MULTI_EGG_SHAPE : ONE_EGG_SHAPE;
     }
 
     @Override
@@ -157,14 +158,4 @@ public abstract class BaseEggBlock extends Block implements IIncubatorEgg {
 
     protected abstract <T extends AnimalEntity> Class<T>[] canTrampleOn();
 
-
-    public static VoxelShape makeShape(){
-        VoxelShape shape = VoxelShapes.empty();
-        shape = VoxelShapes.combineAndSimplify(shape, VoxelShapes.create(0.25, 0, 0.5, 0.5625, 0.3125, 0.8125), IBooleanFunction.OR);
-        shape = VoxelShapes.combineAndSimplify(shape, VoxelShapes.create(0.5625, 0, 0.0625, 0.875, 0.3125, 0.375), IBooleanFunction.OR);
-        shape = VoxelShapes.combineAndSimplify(shape, VoxelShapes.create(0.125, 0, 0.1875, 0.375, 0.25, 0.4375), IBooleanFunction.OR);
-        shape = VoxelShapes.combineAndSimplify(shape, VoxelShapes.create(0.625, 0, 0.6875, 0.875, 0.25, 0.9375), IBooleanFunction.OR);
-
-        return shape;
-    }
 }
