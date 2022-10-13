@@ -59,8 +59,6 @@ public class ApertotemporalisEntity extends AnimalEntity implements IAnimatable 
     private static final DataParameter<Boolean> TRAVELLING = EntityDataManager.createKey(ApertotemporalisEntity.class, DataSerializers.BOOLEAN);
 
     private int isDigging;
-    public static final Predicate<LivingEntity> TARGET_DRY_BABY = (entity) ->
-            entity.isChild() && !entity.isInWater();
 
     public ApertotemporalisEntity(EntityType<ApertotemporalisEntity> type, World worldIn) {
         super(type, worldIn);

@@ -1,0 +1,43 @@
+{
+  "itemGroup.lostGroup": "Lost in Time",
+
+  "item.lost.concavenator_mask": "Concavenator mask",
+
+  "item.lost.wooden_spear": "Wooden spear",
+  "item.lost.stone_spear": "Stone spear",
+  "item.lost.golden_spear": "Golden spear",
+  "item.lost.iron_spear": "Iron spear",
+  "item.lost.diamond_spear": "Diamond spear",
+  "item.lost.netherite_spear": "Netherite spear",
+
+  "item.lost.adobe_brick": "Adobe brick",
+  "item.lost.mud_ball": "Mud ball",
+
+  "item.lost.brown_clay_ball": "Brown clay ball",
+
+  "item.lost.concavenator_hump": "Concavenator hump",
+
+  "item.lost.raw_pelecanimimus_meat": "Raw pelecanimimus meat",
+  "item.lost.cooked_pelecanimimus_meat": "Cooked pelecanimimus meat",
+
+  "item.lost.voidite_crystal": "Voidite crystal",
+  "item.lost.voidite_fragment": "Voidite fragment",
+  "item.lost.voidite_orb": "Voidite orb",
+
+  "block.lost.adobe_bricks": "Adobe bricks",
+  "block.lost.brown_clay": "Brown clay",
+
+  "block.lost.weichselia_plant": "Weichselia",
+
+  "block.lost.mud": "Mud",
+
+  "block.lost.chiseled_purple_bricks": "Chiseled purple bricks",
+  "block.lost.polished_purple_bricks": "Polished purple bricks",
+  "block.lost.purple_bricks": "Purple bricks",
+  "block.lost.purple_bricks_pillar": "Purple bricks pillar",
+  "block.lost.cracked_purple_bricks": "Cracked purple bricks",
+
+
+  "block.lost.voidite_ore": "Voidite ore",
+  "block.lost.voidite_block": "Voidite block"
+}

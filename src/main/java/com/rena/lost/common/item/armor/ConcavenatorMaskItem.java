@@ -5,10 +5,14 @@ import com.rena.lost.client.model.item.ConcavenatorMaskModel;
 import net.minecraft.client.renderer.entity.model.BipedModel;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
+import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -40,5 +44,13 @@ public class ConcavenatorMaskItem extends ArmorItem {
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
         return LostInTime.ARMOR_DIR + "concavenator_mask.png";
+    }
+
+    @Override
+    public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
+        super.onArmorTick(stack, world, player);
+        if(this.slot == EquipmentSlotType.HEAD) {
+            player.addPotionEffect(new EffectInstance(Effects.STRENGTH, 100, 0));
+        }
     }
 }

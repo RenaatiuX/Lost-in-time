@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "lost:item/raw_pelecanimimus_meat"
+  }
+}

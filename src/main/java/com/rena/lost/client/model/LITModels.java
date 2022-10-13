@@ -23,7 +23,8 @@ import java.util.Random;
 @OnlyIn(Dist.CLIENT)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = LostInTime.MOD_ID, value = Dist.CLIENT)
 public class LITModels {
-    public static final String[] HAND_MODEL_ITEMS = new String[] {"wooden_spear"};
+    public static final String[] HAND_MODEL_ITEMS = new String[] {
+            "wooden_spear", "stone_spear", "iron_spear", "golden_spear", "diamond_spear", "netherite_spear"};
 
     @SubscribeEvent
     public static void onModelBakeEvent(ModelBakeEvent event) {
