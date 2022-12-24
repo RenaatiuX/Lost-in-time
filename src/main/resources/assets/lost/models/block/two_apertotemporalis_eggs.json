@@ -1,0 +1,6 @@
+{
+  "parent": "lost:block/template_two_eggs",
+  "textures": {
+    "all": "lost:block/apertotemporalis_eggs_1"
+  }
+}
