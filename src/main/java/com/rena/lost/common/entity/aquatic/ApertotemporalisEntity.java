@@ -3,8 +3,8 @@ package com.rena.lost.common.entity.aquatic;
 import com.mojang.authlib.GameProfile;
 import com.rena.lost.LostInTime;
 import com.rena.lost.common.block.ApertotemporalisEggBlock;
-import com.rena.lost.core.BlockInit;
-import com.rena.lost.core.EntityInit;
+import com.rena.lost.core.init.BlockInit;
+import com.rena.lost.core.init.EntityInit;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.*;
 import net.minecraft.entity.*;
@@ -35,7 +35,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.*;
 import net.minecraft.world.server.ServerWorld;
-import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.FakePlayerFactory;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -75,9 +74,8 @@ public class ApertotemporalisEntity extends AnimalEntity implements IAnimatable,
 
     public static AttributeModifierMap.MutableAttribute createAttributes() {
         return MobEntity.func_233666_p_()
-                .createMutableAttribute(Attributes.MAX_HEALTH, 10.0D)
-                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.2D)
-                .createMutableAttribute(ForgeMod.SWIM_SPEED.get(), 1.0D);
+                .createMutableAttribute(Attributes.MAX_HEALTH, 20.0D)
+                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.25D);
     }
 
     @Override
@@ -320,12 +318,14 @@ public class ApertotemporalisEntity extends AnimalEntity implements IAnimatable,
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 
-        if (event.getController().getCurrentAnimation() != null){
+        Vector3d prevPosVector = new Vector3d(this.prevPosX, this.prevPosY, this.prevPosZ);
+
+        /*if (event.getController().getCurrentAnimation() != null){
             System.out.println(event.getController().getCurrentAnimation().animationName);
-        }
+        }*/
 
         if (this.isOnGround()) {
-            if (horizontalMag(this.getMotion()) > 1.0E-6) {
+            if (prevPosVector.subtract(getPositionVec()).length() > 0.001) {
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.apertotemporalis.walk", ILoopType.EDefaultLoopTypes.LOOP));
             } else {
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.apertotemporalis.idle", ILoopType.EDefaultLoopTypes.LOOP));
@@ -333,7 +333,7 @@ public class ApertotemporalisEntity extends AnimalEntity implements IAnimatable,
         }
 
         else if (this.isInWaterOrBubbleColumn()) {
-            if (horizontalMag(this.getMotion()) > 1.0E-6) {
+            if (event.isMoving()) { //horizontalMag(this.getMotion()) > 1.0E-6
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.apertotemporalis.swim", ILoopType.EDefaultLoopTypes.LOOP));
             } else {
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.apertotemporalis.swim_idle", ILoopType.EDefaultLoopTypes.LOOP));
@@ -344,6 +344,7 @@ public class ApertotemporalisEntity extends AnimalEntity implements IAnimatable,
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.apertotemporalis.buttonpush", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME));
             return PlayState.CONTINUE;
         }
+        //System.out.println((horizontalMag(this.getMotion()) > 1.0E-6) + " walk");
         return PlayState.CONTINUE;
     }
 
@@ -552,6 +553,7 @@ public class ApertotemporalisEntity extends AnimalEntity implements IAnimatable,
          * Returns whether execution should begin. You can also read and cache any state necessary for execution in this
          * method as well.
          */
+        @Override
         public boolean shouldExecute() {
             return super.shouldExecute() && !this.turtle.hasEgg();
         }
@@ -559,6 +561,7 @@ public class ApertotemporalisEntity extends AnimalEntity implements IAnimatable,
         /**
          * Spawns a baby animal of the same type.
          */
+        @Override
         protected void spawnBaby() {
             ServerPlayerEntity serverplayerentity = this.animal.getLoveCause();
             if (serverplayerentity == null && this.targetMate.getLoveCause() != null) {

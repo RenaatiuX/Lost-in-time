@@ -3,11 +3,11 @@ package com.rena.lost.client.event;
 import com.rena.lost.LostInTime;
 import com.rena.lost.client.render.SpearRenderer;
 import com.rena.lost.client.render.entities.ApertotemporalisRender;
+import com.rena.lost.client.render.entities.DakosaurusRender;
 import com.rena.lost.common.item.armor.ConcavenatorMaskItem;
-import com.rena.lost.core.BlockInit;
-import com.rena.lost.core.EntityInit;
-import com.rena.lost.core.ItemInit;
-import net.minecraft.client.renderer.BlockRendererDispatcher;
+import com.rena.lost.core.init.BlockInit;
+import com.rena.lost.core.init.EntityInit;
+import com.rena.lost.core.init.ItemInit;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.ItemModelsProperties;
@@ -50,6 +50,7 @@ public class ClientEvents {
     private static void entityRenderer() {
         RenderingRegistry.registerEntityRenderingHandler(EntityInit.SPEAR_ENTITY.get(), SpearRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityInit.APERTOTEMPORALIS_ENTITY.get(), ApertotemporalisRender::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityInit.DAKOSAURUS_ENTITY.get(), DakosaurusRender::new);
     }
 
     private static void registerBlockRenderer(){

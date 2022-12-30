@@ -1,11 +1,9 @@
 package com.rena.lost;
 
 
-import com.rena.lost.client.model.LITModels;
 import com.rena.lost.common.entity.aquatic.ApertotemporalisEntity;
-import com.rena.lost.core.BlockInit;
-import com.rena.lost.core.EntityInit;
-import com.rena.lost.core.ItemInit;
+import com.rena.lost.common.entity.aquatic.DakosaurusEntity;
+import com.rena.lost.core.init.*;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -17,12 +15,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
 
-import java.util.stream.Collectors;
-
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(LostInTime.MOD_ID)
-public class LostInTime
-{
+public class LostInTime {
     // Directly reference a log4j logger.
     public static final Logger LOGGER = LogManager.getLogger();
 
@@ -39,6 +34,8 @@ public class LostInTime
         BlockInit.BLOCK.register(bus);
         EntityInit.ENTITY_TYPES.register(bus);
 
+        PoiInit.POI.register(bus);
+        BiomeInit.BIOMES.register(bus);
         bus.addListener(this::setup);
         // Register the doClientStuff method for modloading
         bus.addListener(this::doClientStuff);
@@ -48,9 +45,12 @@ public class LostInTime
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event)
-    {
-
+    private void setup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            FeaturesInit.registerConfiguredFeatures();
+            BiomeInit.toDictionary();
+            DimensionInit.registerDimensionStuff();
+        });
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -59,6 +59,7 @@ public class LostInTime
 
     private void registerEntityAttributes(EntityAttributeCreationEvent event) {
         event.put(EntityInit.APERTOTEMPORALIS_ENTITY.get(), ApertotemporalisEntity.createAttributes().create());
+        event.put(EntityInit.DAKOSAURUS_ENTITY.get(), DakosaurusEntity.createAttributes().create());
     }
 
 }

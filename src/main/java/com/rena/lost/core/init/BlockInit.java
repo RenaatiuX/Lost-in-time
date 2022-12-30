@@ -1,7 +1,8 @@
-package com.rena.lost.core;
+package com.rena.lost.core.init;
 
 import com.rena.lost.LostInTime;
 import com.rena.lost.common.block.ApertotemporalisEggBlock;
+import com.rena.lost.common.block.LostPortalBlock;
 import com.rena.lost.common.block.MudBlock;
 import com.rena.lost.common.block.WaterPlantBlock;
 import com.rena.lost.common.tab.LostItemGroup;
@@ -15,7 +16,6 @@ import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import software.bernie.shadowed.eliotlash.mclib.math.functions.classic.Abs;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -67,7 +67,9 @@ public class BlockInit {
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK).setRequiresTool()
                     .hardnessAndResistance(3.0F, 3.0F).harvestTool(ToolType.PICKAXE)
                     .harvestLevel(2)), LostItemGroup.LOST_TAB);
-
+    public static final RegistryObject<Block> MESOZOIC_PORTAL_BLOCK = BLOCK.register("mesozoic_portal_block",
+            () -> new LostPortalBlock(AbstractBlock.Properties.create(Material.PORTAL).hardnessAndResistance(-1F)
+                    .doesNotBlockMovement().tickRandomly().setLightLevel((state) -> 11)));
     public static final RegistryObject<Block> APERTOTEMPORALIS_EGG = register("apertotemporalis_egg",
             () -> new ApertotemporalisEggBlock(AbstractBlock.Properties.create(Material.DRAGON_EGG, MaterialColor.SAND)
                     .hardnessAndResistance(0.5F).sound(SoundType.METAL).tickRandomly().notSolid()), LostItemGroup.LOST_TAB);

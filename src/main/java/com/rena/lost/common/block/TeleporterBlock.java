@@ -1,11 +1,9 @@
 package com.rena.lost.common.block;
 
-import com.rena.lost.core.ItemInit;
+import com.rena.lost.core.init.ItemInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;

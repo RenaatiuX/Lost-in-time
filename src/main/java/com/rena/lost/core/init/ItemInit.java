@@ -1,15 +1,16 @@
-package com.rena.lost.core;
+package com.rena.lost.core.init;
 
 import com.rena.lost.LostInTime;
 import com.rena.lost.client.ClientISTERProvider;
+import com.rena.lost.common.item.OrbPortalItem;
 import com.rena.lost.common.item.SpearItem;
 import com.rena.lost.common.item.armor.ConcavenatorMaskItem;
 import com.rena.lost.common.tab.LostItemGroup;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemTier;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -50,6 +51,8 @@ public class ItemInit {
 
     public static final RegistryObject<Item> CONCAVENATOR_HUMP = ITEMS.register("concavenator_hump",
             ()-> new Item(new Item.Properties().group(LostItemGroup.LOST_TAB)));
+    public static final RegistryObject<Item> DAKOSAURUS_TOOTH = ITEMS.register("dakosaurus_tooth",
+            ()-> new Item(new Item.Properties().group(LostItemGroup.LOST_TAB)));
 
     public static final RegistryObject<Item> RAW_PELECANIMIMUS_MEAT = ITEMS.register("raw_pelecanimimus_meat",
             ()-> new Item(new Item.Properties().group(LostItemGroup.LOST_TAB).food(FoodInit.RAW_PELECANIMIMUS_MEAT)));
@@ -61,5 +64,11 @@ public class ItemInit {
     public static final RegistryObject<Item> VOIDITE_FRAGMENT = ITEMS.register("voidite_fragment",
             ()-> new Item(new Item.Properties().group(LostItemGroup.LOST_TAB)));
     public static final RegistryObject<Item> VOIDITE_ORB = ITEMS.register("voidite_orb",
-            ()-> new Item(new Item.Properties().group(LostItemGroup.LOST_TAB)));
+            ()-> new OrbPortalItem(new Item.Properties().group(LostItemGroup.LOST_TAB).maxDamage(5)));
+
+    //Spawn Egg
+    public static final RegistryObject<Item> APERTOTEMPORALIS_SPAWN_EGG = ITEMS.register("apertotemporalis_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityInit.APERTOTEMPORALIS_ENTITY, 1451792, 8288347, new Item.Properties().group(LostItemGroup.LOST_TAB)));
+    public static final RegistryObject<Item> DAKOSAURUS_SPAWN_EGG = ITEMS.register("dakosaurus_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityInit.DAKOSAURUS_ENTITY, 7499102, 14866359, new Item.Properties().group(LostItemGroup.LOST_TAB)));
 }

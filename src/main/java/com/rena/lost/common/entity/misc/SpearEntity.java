@@ -1,7 +1,7 @@
 package com.rena.lost.common.entity.misc;
 
 import com.rena.lost.LostInTime;
-import com.rena.lost.core.EntityInit;
+import com.rena.lost.core.init.EntityInit;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
@@ -28,7 +28,6 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 import javax.annotation.Nullable;
-import java.util.function.Consumer;
 
 public class SpearEntity extends AbstractArrowEntity {
 

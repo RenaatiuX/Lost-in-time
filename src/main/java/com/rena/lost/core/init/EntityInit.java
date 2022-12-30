@@ -1,7 +1,8 @@
-package com.rena.lost.core;
+package com.rena.lost.core.init;
 
 import com.rena.lost.LostInTime;
 import com.rena.lost.common.entity.aquatic.ApertotemporalisEntity;
+import com.rena.lost.common.entity.aquatic.DakosaurusEntity;
 import com.rena.lost.common.entity.misc.SpearEntity;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -19,4 +20,6 @@ public class EntityInit {
 
     public static final RegistryObject<EntityType<ApertotemporalisEntity>> APERTOTEMPORALIS_ENTITY = ENTITY_TYPES.register("apertotemporalis",
             ()-> EntityType.Builder.<ApertotemporalisEntity>create(ApertotemporalisEntity::new, EntityClassification.WATER_AMBIENT).size(1.2F, 0.4F).trackingRange(10).build("apertotemporalis"));
+    public static final RegistryObject<EntityType<DakosaurusEntity>> DAKOSAURUS_ENTITY = ENTITY_TYPES.register("dakosaurus",
+            ()-> EntityType.Builder.<DakosaurusEntity>create(DakosaurusEntity::new, EntityClassification.WATER_CREATURE).size(1.8F, 1.2F).build("dakosaurus"));
 }

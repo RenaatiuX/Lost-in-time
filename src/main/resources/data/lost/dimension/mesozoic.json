@@ -1,0 +1,11 @@
+{
+  "type": "lost:mesozoic",
+  "generator": {
+    "type": "lost:chunk_generator",
+    "settings": "lost:mesozoic",
+
+    "biome_source": {
+      "type": "lost:biome_provider"
+    }
+  }
+}

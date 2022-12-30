@@ -1,13 +1,12 @@
 package com.rena.lost.common.block;
 
 import com.rena.lost.common.entity.aquatic.ApertotemporalisEntity;
-import com.rena.lost.core.BlockInit;
-import com.rena.lost.core.EntityInit;
+import com.rena.lost.core.init.BlockInit;
+import com.rena.lost.core.init.EntityInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.monster.ZombieEntity;
 import net.minecraft.entity.passive.BatEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;

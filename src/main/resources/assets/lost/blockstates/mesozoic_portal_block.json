@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "lost:block/mesozoic_portal_ew"
+    },
+    "axis=x": {
+      "model": "lost:block/mesozoic_portal_ns"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "surface_builder": "lost:wetland",
+  "depth": -0.22,
+  "scale": 0.1,
+  "temperature": 0.8,
+  "downfall": 0.8,
+  "precipitation": "rain",
+  "category": "swamp",
+  "player_spawn_friendly": false,
+  "effects": {
+    "sky_color": 7907327,
+    "fog_color": 2302743,
+    "water_color": 6388580,
+    "water_fog_color": 2302743,
+    "foliage_color": 12638463,
+    "grass_color_modifier": "swamp",
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 0
+    }
+  },
+  "starts": [],
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:canyon"
+    ]
+  },
+  "features": [
+    [],
+    [
+      "minecraft:lake_water",
+      "minecraft:lake_lava"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite",
+      "minecraft:ore_diorite",
+      "minecraft:ore_andesite",
+      "minecraft:ore_coal",
+      "minecraft:ore_iron",
+      "minecraft:ore_gold",
+      "minecraft:ore_redstone",
+      "minecraft:ore_diamond",
+      "minecraft:ore_lapis",
+      "minecraft:disk_clay",
+      "lost:mud",
+      "lost:brown_clay"
+    ],
+    [],
+    [
+      "minecraft:patch_grass_normal",
+      "minecraft:patch_tall_grass_2",
+      "minecraft:patch_waterlilly",
+      "minecraft:patch_grass_jungle",
+      "minecraft:spring_water",
+      "minecraft:spring_lava",
+      "minecraft:seagrass_swamp",
+      "lost:weichselia"
+    ],
+    []
+  ]
+}

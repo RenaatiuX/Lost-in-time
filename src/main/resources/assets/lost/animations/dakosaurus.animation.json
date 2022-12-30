@@ -1,0 +1,163 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.dakosaurus.swim": {
+			"loop": true,
+			"animation_length": 1.12,
+			"bones": {
+				"Torso": {
+					"rotation": {
+						"vector": [0, "math.sin((query.anim_time-.35)*313.0)*3", "math.sin((query.anim_time-.25)*313.0)*2"]
+					}
+				},
+				"Head": {
+					"rotation": {
+						"vector": [0, "math.sin((query.anim_time-.35)*313.0)*-1.5", "math.sin((query.anim_time-.25)*313.0)*-1"]
+					}
+				},
+				"Tail": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*313.0)*10", "math.sin((query.anim_time-.25)*313.0)*3"]
+					}
+				},
+				"Tail2": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*313.0)*25", "math.sin((query.anim_time-.15)*313.0)*6"]
+					}
+				},
+				"LeftLeg": {
+					"rotation": {
+						"vector": [87.5, -77.5, 0]
+					},
+					"position": {
+						"vector": [0.7, -6, 0]
+					}
+				},
+				"RightLeg": {
+					"rotation": {
+						"vector": [87.5, 77.5, 0]
+					},
+					"position": {
+						"vector": [-0.3, -6, 0]
+					}
+				},
+				"LeftArm": {
+					"rotation": {
+						"vector": [55.46195, -73.5215, 387.3301]
+					},
+					"position": {
+						"vector": [0.7, -2, 0]
+					}
+				},
+				"RightArm": {
+					"rotation": {
+						"vector": [55.462, 73.5215, -387.3301]
+					},
+					"position": {
+						"vector": [-0.3, -2, 0]
+					}
+				},
+				"Dakosaurus": {
+					"position": {
+						"vector": [0, 4, 0]
+					}
+				}
+			}
+		},
+		"animation.dakosaurus.attack": {
+			"loop": false,
+			"animation_length": 1.04,
+			"bones": {
+				"Jaw": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.24": {
+							"vector": [7.5, 0, 0],
+							"easing": "linear"
+						},
+						"0.44": {
+							"vector": [38.75, 0, 0],
+							"easing": "easeInSine"
+						},
+						"0.56": {
+							"vector": [38.75, 0, 0],
+							"easing": "easeInSine"
+						},
+						"0.8": {
+							"vector": [-0.29, 0, 0],
+							"easing": "easeInCubic"
+						},
+						"0.84": {
+							"vector": [-1.29, 0, 0]
+						},
+						"1.04": {
+							"vector": [0, 0, 0],
+							"easing": "easeInSine"
+						}
+					}
+				}
+			}
+		},
+		"animation.dakosaurus.beached": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"Dakosaurus": {
+					"rotation": {
+						"vector": [0, 0, -90]
+					},
+					"position": {
+						"vector": [7, 6, 0]
+					}
+				},
+				"Head": {
+					"rotation": {
+						"vector": [-0.33124, 9.99278, -2.53612]
+					},
+					"position": {
+						"vector": [0, 0, 1]
+					}
+				},
+				"Jaw": {
+					"rotation": {
+						"vector": [10, 0, 0]
+					}
+				},
+				"LeftLeg": {
+					"rotation": {
+						"vector": [47.5, -77.5, 0]
+					},
+					"position": {
+						"vector": [2.3, -4, 0]
+					}
+				},
+				"RightLeg": {
+					"rotation": {
+						"vector": [50, 77.5, 0]
+					},
+					"position": {
+						"vector": [-2.3, -4, 0]
+					}
+				},
+				"LeftArm": {
+					"rotation": {
+						"vector": [55.46195, -73.5215, 387.3301]
+					},
+					"position": {
+						"vector": [0.7, -2, 0]
+					}
+				},
+				"RightArm": {
+					"rotation": {
+						"vector": [55.462, 73.5215, -387.3301]
+					},
+					"position": {
+						"vector": [-0.3, -2, 0]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

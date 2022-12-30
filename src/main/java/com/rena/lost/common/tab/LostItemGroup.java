@@ -1,6 +1,6 @@
 package com.rena.lost.common.tab;
 
-import com.rena.lost.core.ItemInit;
+import com.rena.lost.core.init.ItemInit;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
