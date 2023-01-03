@@ -15,9 +15,11 @@ public class BiomeInit {
     public static final DeferredRegister<Biome> BIOMES = DeferredRegister.create(ForgeRegistries.BIOMES, LostInTime.MOD_ID);
 
     public static final RegistryKey<Biome> WETLAND = register("wetland");
+    public static final RegistryKey<Biome> MESOZOIC_OCEAN = register("mesozoic_ocean");
 
     public static void toDictionary() {
         BiomeDictionary.addTypes(WETLAND, BiomeDictionary.Type.WET, BiomeDictionary.Type.SWAMP, BiomeDictionary.Type.DENSE, BiomeDictionary.Type.LUSH, BiomeDictionary.Type.WATER);
+        BiomeDictionary.addTypes(MESOZOIC_OCEAN, BiomeDictionary.Type.OCEAN);
     }
 
     private static ResourceLocation name(String name) {

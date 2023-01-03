@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "half=lower": { "model": "lost:block/water_grass_bottom_1" },
+    "half=upper": { "model": "lost:block/water_grass_top_1" }
+  }
+}

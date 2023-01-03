@@ -174,8 +174,8 @@ public class DimensionTeleporter implements ITeleporter {
             WorldBorder border = level.getWorldBorder();
             double minX = Math.max(-2.9999872E7D, border.minX() + 16.0D);
             double minZ = Math.max(-2.9999872E7D, border.minZ() + 16.0D);
-            double maxX = Math.min(2.9999872E7D, border.minX() - 16.0D);
-            double maxZ = Math.min(2.9999872E7D, border.minZ() - 16.0D);
+            double maxX = Math.min(2.9999872E7D, border.maxX() - 16.0D);
+            double maxZ = Math.min(2.9999872E7D, border.maxZ() - 16.0D);
             double coordinateDifference = DimensionType.getCoordinateDifference(entity.world.getDimensionType(), level.getDimensionType());
             BlockPos blockpos = new BlockPos(MathHelper.clamp(entity.getPosX() * coordinateDifference, minX, maxX), entity.getPosY(), MathHelper.clamp(entity.getPosZ() * coordinateDifference, minZ, maxZ));
             return this.getOrMakePortal(entity, blockpos).map((result) -> {

@@ -1,3 +1,6 @@
 {
-  "parent": "lost:block/archaefructus"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "lost:block/archaefructus"
+  }
 }

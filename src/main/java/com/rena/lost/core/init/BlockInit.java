@@ -1,10 +1,7 @@
 package com.rena.lost.core.init;
 
 import com.rena.lost.LostInTime;
-import com.rena.lost.common.block.ApertotemporalisEggBlock;
-import com.rena.lost.common.block.LostPortalBlock;
-import com.rena.lost.common.block.MudBlock;
-import com.rena.lost.common.block.WaterPlantBlock;
+import com.rena.lost.common.block.*;
 import com.rena.lost.common.tab.LostItemGroup;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -12,6 +9,8 @@ import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -38,10 +37,33 @@ public class BlockInit {
     public static final RegistryObject<Block> ARCHAEFRUCTUS = register("archaefructus",
             () -> new WaterPlantBlock(AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement()
                     .zeroHardnessAndResistance().sound(SoundType.PLANT)), LostItemGroup.LOST_TAB);
-
+    public static final RegistryObject<Block>  CLADOPHLEBIS = register("cladophlebis",
+            () -> new LostFlowerPlantBlock(AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement()
+                    .zeroHardnessAndResistance().sound(SoundType.PLANT)), LostItemGroup.LOST_TAB);
+    public static final RegistryObject<Block> WATER_GRASS = register("water_grass",
+            () -> new DoublePlantWaterBlock(AbstractBlock.Properties.create(Material.SEA_GRASS).doesNotBlockMovement()
+                    .zeroHardnessAndResistance().sound(SoundType.PLANT)), LostItemGroup.LOST_TAB);
+    public static final RegistryObject<Block> WATER_GRASS_2 = register("water_grass_2",
+            () -> new DoublePlantWaterBlock(AbstractBlock.Properties.create(Material.SEA_GRASS).doesNotBlockMovement()
+                    .zeroHardnessAndResistance().sound(SoundType.PLANT)), LostItemGroup.LOST_TAB);
+    public static final RegistryObject<Block> DUCKWEED = BLOCK.register("duckweed",
+            () -> new DuckWeedBlock(AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement()
+                    .zeroHardnessAndResistance().sound(SoundType.LILY_PADS).notSolid()));
     public static final RegistryObject<Block> MUD = register("mud",
             () -> new MudBlock(AbstractBlock.Properties.create(Material.EARTH, MaterialColor.BROWN)
                     .hardnessAndResistance(0.6F).sound(SoundType.GROUND)), LostItemGroup.LOST_TAB);
+    public static final RegistryObject<Block> HORIZONTAL_LOG = register("horizontal_log",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.OBSIDIAN)
+                    .hardnessAndResistance(2.0F).sound(SoundType.WOOD)), LostItemGroup.LOST_TAB);
+
+    public static final RegistryObject<Block> SEIROCRINUS = register("seirocrinus",
+            () -> new SeirocrinusTopBlock(AbstractBlock.Properties.create(Material.OCEAN_PLANT)
+                    .doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.WET_GRASS)
+                    , Direction.DOWN, SeirocrinusTopBlock.SHAPE, true, 0.14D), LostItemGroup.LOST_TAB);
+    public static final RegistryObject<Block> SEIROCRINUS_PLANT = BLOCK.register("seirocrinus_plant",
+            () -> new SeirocrinusBlock(AbstractBlock.Properties.create(Material.OCEAN_PLANT)
+                    .doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.WET_GRASS)
+                    , Direction.DOWN, VoxelShapes.fullCube(), true));
 
     public static final RegistryObject<Block> CHISELED_PURPLE_BRICKS = register("chiseled_purple_bricks",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.PURPLE)

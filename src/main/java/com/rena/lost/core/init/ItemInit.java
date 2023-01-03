@@ -2,12 +2,14 @@ package com.rena.lost.core.init;
 
 import com.rena.lost.LostInTime;
 import com.rena.lost.client.ClientISTERProvider;
+import com.rena.lost.common.item.DuckWeedItem;
 import com.rena.lost.common.item.OrbPortalItem;
 import com.rena.lost.common.item.SpearItem;
 import com.rena.lost.common.item.armor.ConcavenatorMaskItem;
 import com.rena.lost.common.tab.LostItemGroup;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemTier;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -71,4 +73,8 @@ public class ItemInit {
             () -> new ForgeSpawnEggItem(EntityInit.APERTOTEMPORALIS_ENTITY, 1451792, 8288347, new Item.Properties().group(LostItemGroup.LOST_TAB)));
     public static final RegistryObject<Item> DAKOSAURUS_SPAWN_EGG = ITEMS.register("dakosaurus_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityInit.DAKOSAURUS_ENTITY, 7499102, 14866359, new Item.Properties().group(LostItemGroup.LOST_TAB)));
+
+    //Block
+    public static final RegistryObject<Item> DUCKWEED = ITEMS.register("duckweed",
+            () -> new DuckWeedItem(BlockInit.DUCKWEED.get(), new Item.Properties().group(LostItemGroup.LOST_TAB)));
 }

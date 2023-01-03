@@ -1,11 +1,11 @@
 {
-  "type": "default",
+  "type": "lost:wetland",
   "config": {
     "top_material": {
       "Properties": {
         "snowy": "false"
       },
-      "Name": "minecraft:grass_block"
+      "Name": "minecraft:coarse_dirt"
     },
     "under_material": {
       "Name": "minecraft:dirt"

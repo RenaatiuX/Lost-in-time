@@ -25,24 +25,24 @@ public class LostInTime {
     public static final String ARMOR_DIR = MOD_ID + ":textures/armor/";
 
     public LostInTime() {
-        // Register the setup method for modloading
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        GeckoLib.initialize();
-
-        ItemInit.ITEMS.register(bus);
-        BlockInit.BLOCK.register(bus);
-        EntityInit.ENTITY_TYPES.register(bus);
-
-        PoiInit.POI.register(bus);
-        BiomeInit.BIOMES.register(bus);
         bus.addListener(this::setup);
-        // Register the doClientStuff method for modloading
         bus.addListener(this::doClientStuff);
         bus.addListener(this::registerEntityAttributes);
 
-        // Register ourselves for server and other game events we are interested in
+        GeckoLib.initialize();
+
         MinecraftForge.EVENT_BUS.register(this);
+
+        BiomeInit.BIOMES.register(bus);
+        BlockInit.BLOCK.register(bus);
+        ItemInit.ITEMS.register(bus);
+        EntityInit.ENTITY_TYPES.register(bus);
+        PoiInit.POI.register(bus);
+        FeaturesInit.FEATURES.register(bus);
+        SurfaceBuilderInit.SURFACE_BUILDERS.register(bus);
+
     }
 
     private void setup(final FMLCommonSetupEvent event) {

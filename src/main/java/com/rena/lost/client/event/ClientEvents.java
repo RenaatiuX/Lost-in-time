@@ -57,6 +57,11 @@ public class ClientEvents {
 
         RenderTypeLookup.setRenderLayer(BlockInit.WEICHSELIA_PLANT.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(BlockInit.ARCHAEFRUCTUS.get(), RenderType.getCutout());
-
+        RenderTypeLookup.setRenderLayer(BlockInit.CLADOPHLEBIS.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.WATER_GRASS.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.DUCKWEED.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.WATER_GRASS_2.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.SEIROCRINUS.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.SEIROCRINUS_PLANT.get(), RenderType.getCutout());
     }
 }

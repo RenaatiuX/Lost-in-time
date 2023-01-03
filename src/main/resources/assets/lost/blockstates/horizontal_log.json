@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "lost:block/horizontal_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "lost:block/horizontal_log"
+    },
+    "axis=z": {
+      "model": "lost:block/horizontal_log",
+      "x": 90
+    }
+  }
+}
